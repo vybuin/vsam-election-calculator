@@ -35,6 +35,7 @@ Final Score = Σ (Pool Share × Pool Weight)
 ---
 
 ## Voting Methods
+All candidates are listed at the top with editable names (can add/remove candidates)
 
 ### Qualification Voting (1 Candidate)
 Voters choose:
@@ -42,22 +43,16 @@ Voters choose:
 - No
 - Abstain
 
----
+Every candidate goes through qualification voting (requires ≥66.67% weighted approval)
 
-### Preference Voting (2 Candidates)
-Voters select one candidate.
-
-The winner is determined by a weighted vote.
+1 qualified candidate: Automatic winner (no Stage 2 needed)
 
 ---
 
-### Ranked Choice Voting (3+ Candidates)
-Points per voter:
-- 1st choice → 3 points
-- 2nd choice → 2 points
-- 3rd choice → 1 point
+### Stage 2: Automatic System Selection - Based on how many candidates qualify:
 
-Points are aggregated per pool, normalized, and weighted.
+- 2 qualified candidates: Two-candidate direct vote count system appears
+- 3+ qualified candidates: Ranked choice voting system appears with a tiebreaker if needed
 
 ---
 
