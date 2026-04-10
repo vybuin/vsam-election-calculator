@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue"
 import VotingWeights from "./components/VotingWeight.vue"
+import Candidates from "./components/Candidates.vue"
 
 const weights = ref({
   board: 55,
@@ -12,5 +13,6 @@ const weights = ref({
 <template>
   <div class="p-6">
     <VotingWeights v-model="weights" />
+    <Candidates v-model="candidates" />
   </div>
 </template>
