@@ -114,7 +114,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from "vue";
+import { ref, watch } from "vue";
 import Card from "primevue/card";
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
@@ -123,6 +123,10 @@ const props = defineProps({
   modelValue: {
     type: Array,
     required: true
+  },
+  qualifiedCount: {
+    type: Number,
+    default: 0
   }
 });
 
@@ -148,10 +152,6 @@ watch(
   },
   { immediate: true, deep: true }
 );
-
-const qualifiedCount = computed(() => {
-  return 0;
-});
 
 function emitChange() {
   emit(
@@ -238,7 +238,7 @@ function cancelAdd() {
 
 .subtitle {
   margin: 0.5rem 0 0;
-  color: #6b7280;
+  color: #64748b;
   font-size: 1rem;
 }
 
@@ -253,10 +253,11 @@ function cancelAdd() {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.22);
   border-radius: 0.875rem;
   padding: 0.875rem 1rem;
-  background: #ffffff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 250, 255, 0.96));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 .candidate-main {

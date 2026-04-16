@@ -33,6 +33,7 @@
                     :maxFractionDigits="1"
                     placeholder="Percentage"
                     class="w-full"
+                    @update:modelValue="emitChange"
                 />
             </InputGroup>
         </div>
@@ -52,6 +53,7 @@
                     :maxFractionDigits="1"
                     placeholder="Percentage"
                     class="w-full"
+                    @update:modelValue="emitChange"
                 />
             </InputGroup>
         </div>
@@ -71,6 +73,7 @@
                     :maxFractionDigits="1"
                     placeholder="Percentage"
                     class="w-full"
+                    @update:modelValue="emitChange"
                 />
             </InputGroup>
         </div>
