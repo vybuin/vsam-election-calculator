@@ -3,7 +3,7 @@
     <template #content>
       <div class="card-header">
         <div>
-          <h2 class="title">Candidates</h2>
+          <h2 class="text-2xl font-semibold m-0">Candidates</h2>
           <p class="subtitle">
             {{ localCandidates.length }} total • {{ qualifiedCount }} qualified
           </p>
@@ -230,12 +230,6 @@ function cancelAdd() {
   margin-bottom: 1.5rem;
 }
 
-.title {
-  margin: 0;
-  font-size: 1.75rem;
-  font-weight: 600;
-}
-
 .subtitle {
   margin: 0.5rem 0 0;
   color: #64748b;
@@ -253,10 +247,10 @@ function cancelAdd() {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  border: 1px solid rgba(148, 163, 184, 0.22);
+  border: 1px solid #535353;
   border-radius: 0.875rem;
   padding: 0.875rem 1rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 250, 255, 0.96));
+  background: var(--app-surface);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 

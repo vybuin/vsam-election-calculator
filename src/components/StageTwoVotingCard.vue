@@ -3,7 +3,7 @@
     <template #content>
       <div class="card-header">
         <div>
-          <h2 class="title">
+          <h2 class="text-2xl font-semibold m-0">
             Stage 2:
             <span v-if="mode === 'direct'">Two Candidate System - Direct Vote Count</span>
             <span v-else-if="mode === 'ranked'">Ranked Choice (3+ Candidates)</span>
@@ -285,13 +285,7 @@ function formatWeight(value) {
 }
 
 .card-header {
-  margin-bottom: 1.5rem;
-}
-
-.title {
-  margin: 0;
-  font-size: 1.4rem;
-  font-weight: 700;
+  margin-bottom: 2rem;
 }
 
 .subtitle {
@@ -314,9 +308,9 @@ function formatWeight(value) {
 }
 
 .group-card {
-  border: 1px solid #e5e7eb;
+  border: 1px solid #535353;
   border-radius: 0.875rem;
-  background: #fff;
+  background: var(--app-surface);
   overflow: hidden;
 }
 
@@ -405,7 +399,7 @@ function formatWeight(value) {
 }
 
 .candidate-rank-row {
-  border-top: 1px solid #f1f5f9;
+  border-top: 1px solid #c3c5c9;
   padding: 1rem;
   margin: 0 1rem;
 }

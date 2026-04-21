@@ -2,23 +2,22 @@
   <Card class="final-results-card">
     <template #content>
       <div v-if="winner" class="results-content">
-        <h2 class="title">Final Results</h2>
+        <h2 class="text-2xl font-semibold m-0">Final Results</h2>
 
         <div class="winner-box">
           <i class="pi pi-trophy winner-icon"></i>
           <div class="winner-text">
-            <div class="winner-label">WINNER: {{ winner.name }}</div>
+            <div class="winner-label">Winner: {{ winner.name }}</div>
 
             <div v-if="showDetails" class="winner-details">
               <span v-if="systemLabel">{{ systemLabel }}</span>
-              <span v-if="score !== null">• {{ score.toFixed(2) }}%</span>
             </div>
           </div>
         </div>
       </div>
 
       <div v-else class="empty-state">
-        <h2 class="title">Final Results</h2>
+        <h2 class="text-2xl font-semibold m-0">Final Results</h2>
         <p class="empty-text">{{ emptyMessage }}</p>
       </div>
     </template>
@@ -60,7 +59,7 @@ const emptyMessage = computed(() => {
     return "No final winner yet. A single candidate must qualify in stage 1."
   }
 
-  return "No final winner yet. Complete stage 2 voting first."
+  return "No final winner yet. Complete stage 1 & 2(if applicable) voting first."
 });
 </script>
 
@@ -74,13 +73,6 @@ const emptyMessage = computed(() => {
 .empty-state {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-}
-
-.title {
-  margin: 0;
-  font-size: 1.4rem;
-  font-weight: 700;
 }
 
 .winner-box {
@@ -88,14 +80,14 @@ const emptyMessage = computed(() => {
   align-items: center;
   gap: 0.875rem;
   border: 1px solid rgba(96, 165, 250, 0.24);
-  background: linear-gradient(135deg, #f7fbff 0%, #ebf4ff 58%, #f8fbff 100%);
+  background: linear-gradient(135deg, #f7fff9 0%, #ebfff8 58%, #f8fff8 100%);
   border-radius: 0.875rem;
   padding: 1rem 1.25rem;
 }
 
 .winner-icon {
   font-size: 1.25rem;
-  color: #4c8ec8;
+  color: #4cc892;
 }
 
 .winner-text {
@@ -107,7 +99,7 @@ const emptyMessage = computed(() => {
 .winner-label {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1e3a5f;
+  color: #1e5f38;
 }
 
 .winner-details {
@@ -116,7 +108,10 @@ const emptyMessage = computed(() => {
 }
 
 .empty-text {
-  margin: 0;
-  color: #64748b;
+  padding: 1rem;
+  border: 1px dashed #d1d5db;
+  border-radius: 0.875rem;
+  color: #6b7280;
+  background: #fafafa;
 }
 </style>

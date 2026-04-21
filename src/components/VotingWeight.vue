@@ -1,7 +1,7 @@
 <template>
-  <Card class="w-full">
+  <Card class="weights-card">
     <template #content>
-      <div class="flex items-start justify-between gap-4">
+      <div class="weights-header">
         <div>
           <h2 class="text-2xl font-semibold m-0">Voting Weights</h2>
           <p class="mt-2 mb-0 text-surface-600">
@@ -17,9 +17,9 @@
         />
       </div>
 
-      <div class="mt-8 grid gap-6 md:grid-cols-3">
-        <div>
-          <label class="block font-semibold mb-2">Board Members %</label>
+      <div class="weights-grid">
+        <div class="weight-field">
+          <label class="block font-semibold mb-2">Board Members</label>
             <InputGroup>
                 <InputGroupAddon>
                     <i class="pi pi-percentage"></i>
@@ -38,8 +38,8 @@
             </InputGroup>
         </div>
 
-        <div>
-          <label class="block font-semibold mb-2">Alumni %</label>
+        <div class="weight-field">
+          <label class="block font-semibold mb-2">Alumni</label>
             <InputGroup>
                 <InputGroupAddon>
                     <i class="pi pi-percentage"></i>
@@ -58,8 +58,8 @@
             </InputGroup>
         </div>
 
-        <div>
-          <label class="block font-semibold mb-2">General Assembly %</label>
+        <div class="weight-field">
+          <label class="block font-semibold mb-2">General Assembly</label>
             <InputGroup>
                 <InputGroupAddon>
                     <i class="pi pi-percentage"></i>
@@ -79,7 +79,7 @@
         </div>
       </div>
 
-      <div v-if="!isValid" class="mt-4 text-sm text-red-600">
+      <div v-if="!isValid" class="validation-note text-sm text-red-600">
         Total must equal 100%.
       </div>
     </template>
@@ -138,3 +138,43 @@ function emitChange() {
   });
 }
 </script>
+
+<style scoped>
+.weights-card {
+  width: 100%;
+}
+
+.weights-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.weights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.weight-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.validation-note {
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .weights-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .weights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

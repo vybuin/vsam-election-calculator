@@ -20,9 +20,9 @@ const electionConfig = reactive({
     ga: 30
   },
   candidates: [
-    { id: crypto.randomUUID(), name: "Vy" },
-    { id: crypto.randomUUID(), name: "Kim" },
-    { id: crypto.randomUUID(), name: "Mike" }
+    { id: crypto.randomUUID(), name: "HaVi" },
+    { id: crypto.randomUUID(), name: "Minh" },
+    { id: crypto.randomUUID(), name: "Vy" }
   ],
   qualificationVotes: {
     totals: {
@@ -135,7 +135,8 @@ const finalWinnerScore = computed(() => {
 
 <style scoped>
 .app-shell {
-  padding-top: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
 }
 
 .page-header {

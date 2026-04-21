@@ -3,7 +3,7 @@
     <template #content>
       <div class="card-header">
         <div>
-          <h2 class="title">Stage 1: Qualification Voting (2/3 to qualify)</h2>
+          <h2 class="text-2xl font-semibold m-0">Stage 1: Qualification Voting (2/3 to qualify)</h2>
           <p class="subtitle">
             Enter vote counts for each candidate and voting group.
           </p>
@@ -58,11 +58,27 @@
           <div
             v-for="group in votingGroups"
             :key="group.key"
-            class="group-section"
+            class="candidate-group-row"
           >
             <div class="group-header">
-              <span class="group-name">{{ group.label }}</span>
-              <span class="group-weight">{{ formatWeight(weights[group.key]) }} weight</span>
+              <div class="group-header-main">
+                <span class="group-name">{{ group.label }}</span>
+                <span class="group-meta">
+                  Count entered: {{ enteredTotal(candidate.id, group.key) }} / {{ localTotals[group.key] || 0 }}
+                </span>
+              </div>
+
+              <div class="group-header-actions">
+                <span class="group-weight">{{ formatWeight(weights[group.key]) }} weight</span>
+                <span
+                  :class="[
+                    'validation-text',
+                    isGroupValid(candidate.id, group.key) ? 'valid' : 'invalid'
+                  ]"
+                >
+                  {{ isGroupValid(candidate.id, group.key) ? 'Valid total' : 'Total mismatch' }}
+                </span>
+              </div>
             </div>
 
             <div class="vote-grid">
@@ -94,20 +110,6 @@
               </div>
             </div>
 
-            <div class="group-footer">
-              <span>
-                Count entered:
-                {{ enteredTotal(candidate.id, group.key) }} / {{ localTotals[group.key] || 0 }}
-              </span>
-              <span
-                :class="[
-                  'validation-text',
-                  isGroupValid(candidate.id, group.key) ? 'valid' : 'invalid'
-                ]"
-              >
-                {{ isGroupValid(candidate.id, group.key) ? 'Valid total' : 'Total mismatch' }}
-              </span>
-            </div>
           </div>
         </details>
       </div>
@@ -284,19 +286,13 @@ function formatWeight(value) {
   margin-bottom: 1.5rem;
 }
 
-.title {
-  margin: 0;
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
 .subtitle {
   margin-top: 0.5rem;
   color: #6b7280;
 }
 
 .totals-card {
-  border: 1px solid #e5e7eb;
+  border: 1px solid #535353;
   border-radius: 0.875rem;
   padding: 1rem;
   margin-bottom: 1.5rem;
@@ -322,16 +318,16 @@ function formatWeight(value) {
 }
 
 .candidate-card {
-  border: 1px solid rgba(148, 163, 184, 0.24);
+  border: 1px solid #535353;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--app-card-bg);
   overflow: hidden;
 }
 
 .candidate-summary {
   list-style: none;
   cursor: pointer;
-  padding: 1.25rem 1.25rem 0.9rem;
+  padding: 1.25rem;
 }
 
 .candidate-summary::-webkit-details-marker {
@@ -385,33 +381,47 @@ function formatWeight(value) {
   margin-top: 0.2rem;
 }
 
-.group-section {
-  margin: 0 1.25rem 1.25rem;
-  padding: 1.15rem 1.15rem 1rem;
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  border-radius: 0.95rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 249, 255, 0.92));
+.candidate-group-row {
+  border-top: 1px solid #c3c5c9;
+  padding: 1rem;
+  margin: 0 1rem;
 }
 
-.group-section:first-of-type {
-  margin-top: 0;
-}
-
-.group-section:last-child {
-  margin-bottom: 0;
+.candidate-group-row:first-of-type {
+  border-top: none;
+  padding-top: 0;
 }
 
 .group-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
   gap: 1rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.group-header-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.group-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
 }
 
 .group-name {
-  font-weight: 600;
+  font-weight: 700;
   color: #334155;
+}
+
+.group-meta {
+  color: #6b7280;
+  font-size: 0.92rem;
 }
 
 .group-weight {
@@ -436,17 +446,6 @@ function formatWeight(value) {
   font-weight: 600;
   font-size: 0.95rem;
   color: #334155;
-}
-
-.group-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 0.95rem;
-  font-size: 0.92rem;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  color: #475569;
 }
 
 .validation-text.valid {
