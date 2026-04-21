@@ -28,7 +28,7 @@ const electionConfig = reactive({
     totals: {
       board: 11,
       alumni: 5,
-      ga: 35
+      ga: 3
     },
     byCandidate: {}
   },
