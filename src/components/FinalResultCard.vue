@@ -48,7 +48,7 @@ const showDetails = computed(() => {
 });
 
 const systemLabel = computed(() => {
-  if (props.mode === "qualification") return "Qualified Automatically After Stage 1";
+  if (props.mode === "qualification") return "Qualified Automatically After Qualification Vote";
   if (props.mode === "direct") return "Two Candidate System";
   if (props.mode === "ranked") return "Ranked Choice";
   return "";
