@@ -1,7 +1,7 @@
 # VSAM Election Calculator
-I did not enjoy using spreadsheet :/ so here we are lol
+I did not enjoy using the spreadsheet :/ so here we are lol
 
-Modern dashboard web app for calculating VSAM yearly weighted election results. This is NOT a public voting app. It is an internal VSAM tool used only after PVP manually collects the votes. This replaces manual spreadsheet-based tallying.
+Modern dashboard web app for calculating VSAM(Vietnamese Student Association of Minnesota) yearly weighted election results. This is NOT a public voting app. It is an internal VSAM tool used only after PVP manually collects the votes. This replaces manual spreadsheet-based tallying.
 
 ---
 
