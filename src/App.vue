@@ -130,18 +130,27 @@ const finalWinnerScore = computed(() => {
       :mode="finalResultMode"
       :score="finalWinnerScore"
     />
+    <footer class="page-footer">
+      © 2026 Vietnamese Student Association of Minnesota. All rights reserved.
+    </footer>
   </div>
 </template>
 
 <style scoped>
 .app-shell {
-  padding-top: 2rem;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 
 .page-header {
   margin-bottom: 2rem;
   padding: 2.25rem 1.5rem 1rem;
+}
+
+.page-footer {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #64748b;
 }
 
 .eyebrow {
