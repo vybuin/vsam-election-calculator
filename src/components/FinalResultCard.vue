@@ -48,9 +48,9 @@ const showDetails = computed(() => {
 });
 
 const systemLabel = computed(() => {
-  if (props.mode === "qualification") return "Qualified Automatically After Qualification Vote";
-  if (props.mode === "direct") return "Two Candidate System";
-  if (props.mode === "ranked") return "Ranked Choice";
+  if (props.mode === "qualification") return "Qualified Automatically After Individual Qualification Voting";
+  if (props.mode === "direct") return "Preference Voting";
+  if (props.mode === "ranked") return "Ranked Choice Voting";
   return "";
 });
 
@@ -59,7 +59,7 @@ const emptyMessage = computed(() => {
     return "No final winner yet. A single candidate must qualify in stage 1."
   }
 
-  return "No final winner yet. Complete stage 1 & 2(if applicable) voting first."
+  return "No final winner yet. Complete the required voting stages."
 });
 </script>
 

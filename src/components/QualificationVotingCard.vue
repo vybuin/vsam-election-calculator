@@ -3,15 +3,18 @@
     <template #content>
       <div class="card-header">
         <div>
-          <h2 class="text-2xl font-semibold m-0">Stage 1: Qualification Voting (2/3 to qualify)</h2>
+          <h2 class="text-2xl font-semibold m-0">Stage 1: Individual Qualification Voting</h2>
           <p class="subtitle">
-            Enter vote counts for each candidate and voting group.
+            The candidate with at least two-thirds (⅔) approval rating is eligible to win the election.
           </p>
         </div>
       </div>
 
       <div class="totals-card">
         <h3 class="totals-title">Expected Total Votes by Group</h3>
+          <p class="subtitle">
+            Enter vote counts for each candidate and voting group.
+          </p>
         <div class="totals-grid">
           <div class="total-field">
             <label class="field-label">Board Members</label>
