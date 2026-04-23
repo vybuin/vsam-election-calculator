@@ -129,6 +129,7 @@ const finalWinnerScore = computed(() => {
       :winner="finalWinner"
       :mode="finalResultMode"
       :score="finalWinnerScore"
+      :results="finalResults"
     />
     <footer class="page-footer">
       © 2026 Vietnamese Student Association of Minnesota. All rights reserved.

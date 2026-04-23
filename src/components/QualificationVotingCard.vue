@@ -67,7 +67,7 @@
               <div class="group-header-main">
                 <span class="group-name">{{ group.label }}</span>
                 <span class="group-meta">
-                  Count entered: {{ enteredTotal(candidate.id, group.key) }} / {{ localTotals[group.key] || 0 }}
+                  # of votes entered: {{ enteredTotal(candidate.id, group.key) }} / {{ localTotals[group.key] || 0 }}
                 </span>
               </div>
 
